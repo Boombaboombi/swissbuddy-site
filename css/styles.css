@@ -1,0 +1,173 @@
+/* ===== Design Tokens ===== */
+:root {
+  --brand: #e45745;
+  --brand-600: #cc4e3f;
+  --bg: #f7f7f9;
+  --card: #ffffff;
+  --text: #111;
+  --muted: #666;
+  --ring: 2px solid rgba(228,87,69,.35);
+  --shadow: 0 10px 24px rgba(0,0,0,.06);
+  --radius: 16px;
+  --speed: .18s;
+  --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Dark Mode */
+:root[data-theme="dark"]{
+  --bg: #0d0f12;
+  --card: #15181d;
+  --text: #eaeef5;
+  --muted: #a6adba;
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --ring: 2px solid rgba(255,255,255,.2);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:var(--font); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+
+/* Header */
+header{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 20px; background:var(--card);
+  position:sticky; top:0; border-bottom:1px solid #e9e9ee;
+  z-index:10;
+}
+:root[data-theme="dark"] header{ border-color:#222831; }
+header img{width:40px;height:40px;border-radius:12px}
+nav a{
+  margin-right:6px; padding:8px 10px; border-radius:10px;
+  text-decoration:none; color:var(--text); font-weight:600; position:relative;
+}
+nav a.active{
+  color:var(--brand);
+}
+nav a.active::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:4px;
+  height:2px; background:var(--brand); border-radius:2px;
+}
+
+/* Layout */
+.container{max-width:980px;margin:0 auto;padding:20px}
+.card{
+  background:var(--card); border:1px solid rgba(0,0,0,.06);
+  border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+  transition:transform var(--speed) ease, box-shadow var(--speed) ease, border-color var(--speed) ease;
+}
+.card:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.08); }
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+
+/* Buttons */
+button{
+  border:0; border-radius:12px; background:var(--brand); color:#fff;
+  padding:10px 14px; font-weight:700; cursor:pointer;
+  transition: filter var(--speed), transform var(--speed), background var(--speed);
+}
+/* Buttons appear more vivid when hovered to provide clear feedback */
+button:hover{
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+button:active{ transform:translateY(0) scale(.99) }
+button.secondary{ background:#222; color:#fff }
+:root[data-theme="dark"] button.secondary{ background:#2a2f37 }
+button:focus-visible{ outline:var(--ring) }
+
+/* Icon Buttons */
+.icon-btn{
+  background:transparent; color:var(--text); border:1px solid rgba(0,0,0,.08);
+  padding:8px 10px; border-radius:10px;
+}
+:root[data-theme="dark"] .icon-btn{ border-color:#2a2f37; color:var(--text); }
+.icon-btn:hover{ background:rgba(0,0,0,.04) }
+:root[data-theme="dark"] .icon-btn:hover{ background:#1b1f26 }
+
+/* Text */
+.muted{color:var(--muted); font-size:13px}
+
+/* Footer */
+footer{padding:40px 0 60px;color:var(--muted);text-align:center}
+
+/* Quiz */
+.quiz-q{font-size:20px;font-weight:700;margin:10px 0 12px}
+.quiz-options{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.quiz-option{
+  border:1px solid rgba(0,0,0,.08); border-radius:12px; padding:12px; background:var(--card);
+  cursor:pointer; transition:transform var(--speed), box-shadow var(--speed), border-color var(--speed);
+}
+.quiz-option:hover{ transform:translateY(-1px); box-shadow:var(--shadow) }
+.quiz-option.correct{ border-color:#19c37d; box-shadow:0 0 0 3px rgba(25,195,125,.18) }
+.quiz-option.wrong{ border-color:#ff6961; box-shadow:0 0 0 3px rgba(255,105,97,.18) }
+.quiz-actions{margin-top:12px}
+@media (max-width:560px){ .quiz-options{grid-template-columns:1fr} }
+
+/* Region Modal & Buttons */
+#region-modal::backdrop{background:rgba(0,0,0,.25)}
+#region-modal{border:0;border-radius:16px;padding:16px 16px 12px;max-width:520px;background:var(--card);color:var(--text)}
+.grid-compact{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.region-btn{background:#f2f2f2;color:#111;border:1px solid #ddd}
+:root[data-theme="dark"] .region-btn{ background:#22272f; color:#eaeef5; border-color:#2a2f37 }
+.region-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* UI language buttons behave similar to region buttons */
+.ui-lang-btn{background:#f2f2f2;color:#111;border:1px solid #ddd}
+:root[data-theme="dark"] .ui-lang-btn{background:#22272f;color:#eaeef5;border-color:#2a2f37}
+.ui-lang-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+/* learn language buttons (training language) adopt similar styling as region buttons */
+.learn-lang-btn{background:#f2f2f2;color:#111;border:1px solid #ddd}
+:root[data-theme="dark"] .learn-lang-btn{background:#22272f;color:#eaeef5;border-color:#2a2f37}
+.learn-lang-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+/* Stronger hover states for language selection buttons and navigation */
+/* Hover effect for training-language and UI-language buttons when not active */
+.learn-lang-btn:hover:not(.active), .ui-lang-btn:hover:not(.active) {
+  border-color: var(--brand);
+  background: rgba(228,87,69,0.12);
+  color: var(--text);
+}
+/* Hover effect for navigation links */
+nav a:hover:not(.active) {
+  background: rgba(228,87,69,0.08);
+}
+#btn-region{display:flex;align-items:center;gap:6px}
+#btn-region #region-label{
+  display:inline-block;min-width:2.2em;text-align:center;font-weight:700;
+  background:#fff;color:#111;border-radius:6px;padding:2px 6px;border:1px solid #eee
+}
+:root[data-theme="dark"] #btn-region #region-label{ background:#0d0f12; color:#eaeef5; border-color:#2a2f37 }
+
+.option{  /* fallback if old class appears somewhere */
+  border:1px solid rgba(0,0,0,.08); border-radius:12px; padding:12px; background:var(--card);
+  cursor:pointer; transition:transform var(--speed), box-shadow var(--speed), border-color var(--speed);
+}
+.option.correct{ border-color:#19c37d; box-shadow:0 0 0 3px rgba(25,195,125,.18) }
+.option.wrong{ border-color:#ff6961; box-shadow:0 0 0 3px rgba(255,105,97,.18) }
+
+
+/* Strong active state in Dark Mode for language buttons */
+:root[data-theme="dark"] .learn-lang-btn.active,
+:root[data-theme="dark"] .ui-lang-btn.active{
+  background: var(--brand) !important;
+  color: #fff !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(228,87,69,.28) !important;
+}
+
+
+/* Quiz option badges (✅/❌) */
+.quiz-option, .option{ position: relative; padding-right: 42px; }
+.quiz-badge{
+  position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  font-size:18px; line-height:1; opacity:.95;
+}
+
+
+/* Responsive nav: keep one row with horizontal scroll on small screens */
+@media (max-width: 720px){
+  header{ flex-wrap:wrap; gap:8px; }
+  nav{ width:100%; overflow:auto; white-space:nowrap; padding-bottom:2px; }
+  nav a{ display:inline-block; margin-bottom:2px; }
+}

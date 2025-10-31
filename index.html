@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwissBuddy</title>
+
+  <!-- Manifest & Icon -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e45745"/>
+  <link rel="icon" href="assets/icon-192.png">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Versioniertes CSS für Cache-Busting -->
+  <link rel="stylesheet" href="css/styles.css?v=7" />
+</head>
+<body>
+  <header>
+    <!-- Clickable brand redirects to Home -->
+    <a href="#home" id="brand-link" class="brand" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit">
+      <!-- Verwende das offizielle Swissbuddy‑Logo -->
+      <img src="assets/logo.png" alt="SwissBuddy Logo" style="width:40px;height:40px;border-radius:12px">
+      <strong>SwissBuddy</strong>
+    </a>
+    <nav id="main-nav">
+      <a href="#home"    data-screen="home"    class="active" data-i18n="nav_home">Start</a>
+      <a href="#vocab"   data-screen="vocab"   data-i18n="nav_vocab">Vokabeln</a>
+      <a href="#ov"      data-screen="ov"      data-i18n="nav_ov">ÖV‑Tipps</a>
+      <a href="#quiz"    data-screen="quiz"    data-i18n="nav_quiz">Quiz</a>
+      <!-- Neuer Navigationspunkt für den Währungsrechner -->
+      <a href="#currency" data-screen="currency" data-i18n="nav_currency">Währungsrechner</a>
+    </nav>
+    <div class="lang-toggle">
+      <!-- Gemeinsamer Button für Sprache & Region -->
+      <!-- UI language selector -->
+      <button id="btn-lang" class="icon-btn" title="App-Sprache wählen">
+        <span id="ui-lang-label">DE</span> <span aria-hidden="true">🌐</span>
+      </button>
+      <button id="theme-toggle" class="icon-btn" title="Hell/Dunkel umschalten" aria-label="Theme umschalten">🌓</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- HOME -->
+    <section id="screen-home" class="card">
+      <div style="display:flex;align-items:center;gap:18px;margin:6px 0 18px">
+        <img src="assets/logo.png" alt="SwissBuddy Logo" style="width:72px;height:72px;border-radius:18px">
+        <h1 style="margin:0;font-size:36px;letter-spacing:.2px">SwissBuddy</h1>
+      </div>
+      <p class="muted" data-i18n="home_tagline" style="max-width:680px"></p>
+
+      <div class="grid" style="margin-top:18px">
+        <section class="card">
+          <h3 data-i18n="tile_vocab_title">Alltags-Vokabeln</h3>
+          <p class="muted" data-i18n="tile_vocab_text">Die wichtigsten Wörter mit Aussprache.</p>
+          <button onclick="location.hash='#vocab'" data-i18n="tile_vocab_cta">Los geht’s</button>
+        </section>
+
+        <section class="card">
+          <h3 data-i18n="tile_ov_title">Öffentlicher Verkehr – Tipps</h3>
+          <p class="muted" data-i18n="tile_ov_text">So nutzt du Zug & Bus einfach und sicher.</p>
+          <button onclick="location.hash='#ov'" data-i18n="tile_ov_cta">Tipps anzeigen</button>
+        </section>
+
+        <section class="card">
+          <h3 data-i18n="tile_quiz_title">Quiz – Vokabeln</h3>
+          <p class="muted" data-i18n="tile_quiz_text">Teste dein Vokabelwissen.</p>
+          <button onclick="location.hash='#quiz'" data-i18n="tile_quiz_cta">Quiz starten</button>
+        </section>
+
+        <section class="card">
+          <h3 data-i18n="tile_currency_title">💱 Währungsrechner</h3>
+          <p class="muted" data-i18n="tile_currency_text">Rechne CHF, EUR und THB um.</p>
+          <button onclick="location.hash='#currency'" data-i18n="tile_currency_cta">Umrechner öffnen</button>
+        </section>
+      </div>
+</section>
+
+    <!-- VOCAB -->
+    <section id="screen-vocab" class="card" hidden>
+      <h2 data-i18n="vocab_title">Alltags-Vokabeln</h2>
+      <p class="muted" data-i18n="vocab_hint">Tippe auf ▶︎ für die Aussprache.</p>
+      <!-- Trainingssprache auswählen -->
+      <div id="learn-switch-vocab" class="learn-switch" style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="learn-lang-btn" data-lang="de">DE</button>
+        <button class="learn-lang-btn" data-lang="fr">FR</button>
+        <button class="learn-lang-btn" data-lang="it">IT</button>
+        <button class="learn-lang-btn" data-lang="en">EN</button>
+      </div>
+      <!-- Suchfeld für Vokabeln -->
+      <input type="search" id="vocab-search" placeholder="Suchen..." style="margin-bottom:12px;padding:8px;border:1px solid #ccc;border-radius:8px;max-width:320px" />
+      <div id="vocab-list" class="grid"></div>
+    </section>
+
+    <!-- ÖV -->
+    <section id="screen-ov" class="card" hidden>
+      <h2 data-i18n="ov_title">Öffentlicher Verkehr – Tipps</h2>
+      <ul>
+        <li data-i18n="ov_1">&#8203;</li>
+        <li data-i18n="ov_2">&#8203;</li>
+        <li data-i18n="ov_3">&#8203;</li>
+        <li data-i18n="ov_4">&#8203;</li>
+        <li data-i18n="ov_5">&#8203;</li>
+        <li data-i18n="ov_6">&#8203;</li>
+        <li data-i18n="ov_7">&#8203;</li>
+        <li data-i18n="ov_8">&#8203;</li>
+        <li data-i18n="ov_9">&#8203;</li>
+        <li data-i18n="ov_10">&#8203;</li>
+      </ul>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="screen-quiz" class="card" hidden>
+      <h2 data-i18n="quiz_title">Quiz – Vokabeln</h2>
+      <p class="muted" data-i18n="quiz_hint">Wähle die richtige Übersetzung.</p>
+
+      <!-- Trainingssprache auswählen im Quiz -->
+      <div id="learn-switch-quiz" class="learn-switch" style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="learn-lang-btn" data-lang="de">DE</button>
+        <button class="learn-lang-btn" data-lang="fr">FR</button>
+        <button class="learn-lang-btn" data-lang="it">IT</button>
+        <button class="learn-lang-btn" data-lang="en">EN</button>
+      </div>
+      <!-- Quiz Frageanzahl wählen -->
+      <div id="quiz-config" style="margin-bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <label for="quiz-size" data-i18n="quiz_size_label" style="font-weight:600">Anzahl Fragen:</label>
+        <select id="quiz-size" style="padding:8px;border:1px solid #ccc;border-radius:8px">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="all" data-i18n="quiz_all">Alle</option>
+        </select>
+      </div>
+
+      <div id="quiz-start">
+        <button id="btn-start-quiz" data-i18n="quiz_start">Quiz starten</button>
+      </div>
+
+      <div id="quiz-area" hidden>
+        <div id="quiz-status" class="muted"></div>
+        <div id="quiz-question" class="quiz-q"></div>
+        <div id="quiz-options" class="quiz-options"></div>
+        <div class="quiz-actions">
+          <button id="btn-next" data-i18n="quiz_next" disabled>Weiter</button>
+        </div>
+      </div>
+
+      <div id="quiz-result" hidden>
+        <h3 data-i18n="quiz_result_title">Ergebnis</h3>
+        <p id="quiz-score"></p>
+        <button id="btn-retry" data-i18n="quiz_retry">Nochmal</button>
+      </div>
+    </section>
+
+    <!-- CURRENCY -->
+    <section id="screen-currency" class="card" hidden>
+      <h2 data-i18n="currency_title">Währungsrechner</h2>
+      <p class="muted" data-i18n="currency_hint">Gib Betrag ein und wähle Währungen.</p>
+      <div class="currency-inputs" style="display:flex;flex-direction:column;gap:12px;max-width:320px">
+        <input type="number" id="currency-amount" placeholder="Betrag" style="padding:10px;border:1px solid #ccc;border-radius:8px;font-size:16px">
+        <div class="currency-selects" style="display:flex;align-items:center;gap:8px">
+          <select id="currency-from" style="flex:1;padding:8px;border-radius:8px;border:1px solid #ccc">
+            <option value="CHF">CHF</option>
+            <option value="THB">THB</option>
+            <option value="EUR">EUR</option>
+          </select>
+          <button id="btn-swap-currency" type="button" class="icon-btn" style="padding:8px;border-radius:8px;border:1px solid #ccc;background:transparent" aria-label="Währungen tauschen">⇆</button>
+          <select id="currency-to" style="flex:1;padding:8px;border-radius:8px;border:1px solid #ccc">
+            <option value="THB">THB</option>
+            <option value="CHF">CHF</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </div>
+      </div>
+      <div id="currency-result" style="margin-top:16px;font-weight:700;font-size:20px;"></div>
+      <p class="muted" style="margin-top:12px;font-size:12px">
+        <!-- Verweis auf die verwendete Open‑Source‑Currency‑API -->
+        <a href="https://github.com/fawazahmed0/currency-api" target="_blank">Rates by currency-api</a>
+      </p>
+    </section>
+  </div>
+
+  <!-- App language selection Modal -->
+  <dialog id="lang-modal">
+    <h3 data-i18n="lang_title">App‑Sprache</h3>
+    <p class="muted" data-i18n="lang_text">Wähle die Sprache der Benutzeroberfläche.</p>
+    <div class="grid grid-compact">
+      <button class="ui-lang-btn" data-lang="de">Deutsch</button>
+      <button class="ui-lang-btn" data-lang="th">Thai</button>
+      <button class="ui-lang-btn" data-lang="it">Italienisch</button>
+      <button class="ui-lang-btn" data-lang="fr">Französisch</button>
+      <button class="ui-lang-btn" data-lang="en">Englisch</button>
+    </div>
+    <div style="margin-top:12px; text-align:right">
+      <button id="lang-close">OK</button>
+    </div>
+  </dialog>
+
+  <footer>© SwissBuddy MVP</footer>
+
+  <!-- Versioniertes JS (Cache-Busting) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
