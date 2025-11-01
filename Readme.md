@@ -2,9 +2,6 @@
 
 SwissBuddy ist eine Progressive Web App (PWA), die Zugezogenen in der Schweiz hilft, Sprache, Kultur und Alltag spielerisch zu lernen.
 
-## Projektstruktur
-
-- **01 projektstruktur/** → Dokumentation, Konzepte, Zeitplan, Projektauftrag
 - **assets/** → Bilder und Icons
 - **css/** → Stylesheets
 - **js/** → JavaScript (Quiz, Sprachlogik etc.)
