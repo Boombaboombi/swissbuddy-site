@@ -55,11 +55,19 @@ export const i18n = {
     nav_ov: "ÖV‑Tipps",
     nav_quiz: "Quiz",
     nav_currency: "Währungsrechner",
+    tile_roadsigns_cta: "Verkehrstafeln öffnen",
+    tile_roadsigns_text: "Lerne wichtige Schweizer Signale mit Thai-Erklärungen.",
+    tile_roadsigns_title: "Verkehrstafeln",
+    nav_roadsigns: "Verkehrstafeln",
     // Sprache & Region Modal (veraltet, nicht mehr verwendet)
     langregion_title: "",
     langregion_text: ""
   },
   th: {
+    tile_roadsigns_title: "\u0e1b\u0e49\u0e32\u0e22\u0e08\u0e23\u0e32\u0e08\u0e23",
+    tile_roadsigns_text: "\u0e40\u0e23\u0e35\u0e22\u0e19\u0e23\u0e39\u0e49\u0e1b\u0e49\u0e32\u0e22\u0e08\u0e23\u0e32\u0e08\u0e23\u0e2a\u0e33\u0e04\u0e31\u0e0d\u0e02\u0e2d\u0e07\u0e2a\u0e27\u0e34\u0e15\u0e40\u0e0b\u0e2d\u0e23\u0e4c\u0e41\u0e25\u0e19\u0e14\u0e4c\u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22",
+    tile_roadsigns_cta: "\u0e40\u0e1b\u0e34\u0e14\u0e1b\u0e49\u0e32\u0e22\u0e08\u0e23\u0e32\u0e08\u0e23",
+    nav_roadsigns: "\u0e1b\u0e49\u0e32\u0e22\u0e08\u0e23\u0e32\u0e08\u0e23",
     home_tagline: "คู่หูขนาดกะทัดรัดสำหรับชีวิตประจำวัน การขนส่งสาธารณะ และภาษา",
     home_title: "ยินดีต้อนรับ 🇨🇭👋",
     home_text: "แอปนี้ช่วยชีวิตประจำวันของคุณในสวิตเซอร์แลนด์ — ทั้งภาษาเยอรมันและภาษาไทย",
@@ -121,6 +129,10 @@ export const i18n = {
   }
   ,
   fr: {
+    tile_roadsigns_title: "Signaux routiers",
+    tile_roadsigns_text: "Apprends les principaux signaux suisses avec des explications en thai.",
+    tile_roadsigns_cta: "Ouvrir les signaux",
+    nav_roadsigns: "Signaux routiers",
     home_title: "Bienvenue 🇨🇭👋",
     home_text: "Cette application t'aide dans la vie quotidienne en Suisse – en allemand et en thaï.",
     home_tagline: "Ton compagnon compact pour le quotidien, les transports publics et la langue",
@@ -174,6 +186,10 @@ export const i18n = {
     langregion_text: ""
   },
   it: {
+    tile_roadsigns_title: "Segnali stradali",
+    tile_roadsigns_text: "Impara i principali segnali svizzeri con spiegazioni in thailandese.",
+    tile_roadsigns_cta: "Apri segnali",
+    nav_roadsigns: "Segnali stradali",
     home_title: "Benvenuto 🇨🇭👋",
     home_text: "Questa app ti aiuta nella vita quotidiana in Svizzera – in tedesco e thailandese.",
     home_tagline: "Il tuo compagno compatto per la vita quotidiana, i trasporti pubblici e la lingua",
@@ -227,6 +243,10 @@ export const i18n = {
     langregion_text: ""
   },
   en: {
+    tile_roadsigns_title: "Road signs",
+    tile_roadsigns_text: "Learn important Swiss signs with Thai explanations.",
+    tile_roadsigns_cta: "Open road signs",
+    nav_roadsigns: "Road signs",
     home_title: "Welcome 🇨🇭👋",
     home_text: "This app helps you in everyday life in Switzerland – in German and Thai.",
     home_tagline: "Your compact companion for daily life, public transport and language",

@@ -32,18 +32,21 @@ themeToggle?.addEventListener("click", ()=>{
 
 /* ===== Routing / Navigation ===== */
 function show(route){
+  const knownRoute = document.getElementById(`screen-${route}`) ? route : "home";
   navEl?.querySelectorAll("a").forEach(a => {
-    a.classList.toggle("active", a.dataset.screen === route);
+    a.classList.toggle("active", a.dataset.screen === knownRoute);
   });
   document.querySelectorAll("[id^='screen-']").forEach(s => {
-    s.hidden = !s.id.endsWith(route);
+    s.hidden = s.id !== `screen-${knownRoute}`;
   });
+  return knownRoute;
 }
 function syncRoute(){
   const r = (location.hash.replace("#","") || "home");
-  show(r);
-  if(r === "currency"){ initCurrency(); }
-  if(r === "vocab"){ renderVocab(); }
+  const route = show(r);
+  if(route === "currency"){ initCurrency(); }
+  if(route === "vocab"){ renderVocab(); }
+  if(route === "roadsigns"){ window.renderRoadSigns?.(); }
 }
 navEl?.addEventListener("click", (e)=>{
   const a = e.target.closest("a");
@@ -362,7 +365,7 @@ window.addEventListener("click", (e)=>{
 });
 
 /* ===== Service Worker – in Dev aus, in Prod ohne Query registrieren ===== */
-const isLocalhost = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+const isLocalhost = ["localhost", "127.0.0.1", "::1"].includes(location.hostname);
 if ("serviceWorker" in navigator) {
   if (!isLocalhost) {
     window.addEventListener("load", ()=> navigator.serviceWorker.register("sw.js"));
@@ -405,6 +408,8 @@ function initCurrency(){
   const resultEl    = document.getElementById("currency-result");
   const swapBtn     = document.getElementById("btn-swap-currency");
   if(!amountInput || !fromSel || !toSel || !resultEl || !swapBtn) return;
+  if(amountInput.dataset.currencyReady === "1") return;
+  amountInput.dataset.currencyReady = "1";
 
   function parseAmount(v){
     // Komma -> Punkt, nur Ziffern & Punkt behalten
