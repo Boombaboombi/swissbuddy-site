@@ -16,6 +16,7 @@
 
   <!-- Versioniertes CSS für Cache-Busting -->
   <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/road-signs.css?v=1" />
 </head>
 <body>
   <header>
@@ -30,6 +31,7 @@
       <a href="#vocab"   data-screen="vocab"   data-i18n="nav_vocab">Vokabeln</a>
       <a href="#ov"      data-screen="ov"      data-i18n="nav_ov">ÖV‑Tipps</a>
       <a href="#quiz"    data-screen="quiz"    data-i18n="nav_quiz">Quiz</a>
+      <a href="#roadsigns" data-screen="roadsigns" data-i18n="nav_roadsigns">Verkehrstafeln</a>
       <!-- Neuer Navigationspunkt für den Währungsrechner -->
       <a href="#currency" data-screen="currency" data-i18n="nav_currency">Währungsrechner</a>
     </nav>
@@ -70,6 +72,13 @@
           <p class="muted" data-i18n="tile_quiz_text">Teste dein Vokabelwissen.</p>
           <button onclick="location.hash='#quiz'" data-i18n="tile_quiz_cta">Quiz starten</button>
         </section>
+
+        <section class="card">
+          <h3 data-i18n="tile_roadsigns_title">🚦 Verkehrstafeln</h3>
+          <p class="muted" data-i18n="tile_roadsigns_text">Lerne wichtige Schweizer Signale mit Thai-Erklärungen.</p>
+          <button onclick="location.hash='#roadsigns'" data-i18n="tile_roadsigns_cta">Verkehrstafeln öffnen</button>
+        </section>
+
 
         <section class="card">
           <h3 data-i18n="tile_currency_title">💱 Währungsrechner</h3>
@@ -155,6 +164,12 @@
       </div>
     </section>
 
+
+    <!-- ROAD SIGNS -->
+    <section id="screen-roadsigns" class="card" hidden>
+      <div id="road-signs-root"></div>
+    </section>
+
     <!-- CURRENCY -->
     <section id="screen-currency" class="card" hidden>
       <h2 data-i18n="currency_title">Währungsrechner</h2>
@@ -203,5 +218,6 @@
 
   <!-- Versioniertes JS (Cache-Busting) -->
   <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/road-signs.js?v=1"></script>
 </body>
 </html>
