@@ -50,8 +50,8 @@ export const roadSigns = [
     "image": "assets/road-signs/ch/1.05-schleudergefahr-0.png",
     "de": "Schleudergefahr",
     "th": "ระวังถนนลื่น",
-    "simpleDe": "Die Fahrbahn kann rutschig sein. Sanft lenken, bremsen und beschleunigen.",
-    "simpleTh": "ถนนอาจลื่น ขับช้า เบรกและเลี้ยวอย่างนุ่มนวล",
+    "simpleDe": "Die Fahrbahn kann rutschig sein. Bei Eis oder Schnee kann die Zusatztafel «Vereiste Fahrbahn» stehen.",
+    "simpleTh": "ถนนอาจลื่น โดยเฉพาะเมื่อมีน้ำแข็งหรือหิมะ อาจมีป้ายเสริมว่าถนนเป็นน้ำแข็ง",
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
@@ -121,6 +121,28 @@ export const roadSigns = [
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
+    "id": "1.12",
+    "category": "danger",
+    "importance": "high",
+    "image": "assets/road-signs/ch/1.12-rollsplitt.svg",
+    "de": "Rollsplitt",
+    "th": "ระวังกรวดบนถนน",
+    "simpleDe": "Lose Steine auf der Fahrbahn. Tempo reduzieren und Abstand halten.",
+    "simpleTh": "มีกรวดหรือหินเล็ก ๆ บนถนน ลดความเร็วและรักษาระยะห่าง",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "1.13",
+    "category": "danger",
+    "importance": "high",
+    "image": "assets/road-signs/ch/1.13-steinschlag.svg",
+    "de": "Steinschlag",
+    "th": "ระวังหินตก",
+    "simpleDe": "Steine können auf die Fahrbahn fallen oder bereits dort liegen.",
+    "simpleTh": "อาจมีหินตกหรือหินอยู่บนถนน ลดความเร็วและระวัง",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
     "id": "1.14",
     "category": "danger",
     "importance": "very_high",
@@ -140,6 +162,17 @@ export const roadSigns = [
     "th": "ไม้กั้นทางรถไฟ",
     "simpleDe": "Bahnübergang mit Schranke. Bereit sein anzuhalten.",
     "simpleTh": "ระวังทางรถไฟหรือไม้กั้น เตรียมหยุด",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "1.16",
+    "category": "danger",
+    "importance": "very_high",
+    "image": "assets/road-signs/ch/1.16-bahnuebergang-ohne-schranken.svg",
+    "de": "Bahnübergang ohne Schranken",
+    "th": "ทางรถไฟไม่มีไม้กั้น",
+    "simpleDe": "Bahnübergang ohne Schranke. Bereit sein anzuhalten und gut schauen.",
+    "simpleTh": "ทางรถไฟไม่มีไม้กั้น เตรียมหยุด มองซ้ายขวาและฟังสัญญาณรถไฟ",
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
@@ -495,6 +528,28 @@ export const roadSigns = [
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
+    "id": "2.53.1",
+    "category": "rules",
+    "importance": "high",
+    "image": "assets/road-signs/ch/2.53.1-ende-hoechstgeschwindigkeit-50-generell.svg",
+    "de": "Ende der Höchstgeschwindigkeit 50 generell",
+    "th": "สิ้นสุดเขตความเร็วทั่วไป 50",
+    "simpleDe": "Die allgemeine Höchstgeschwindigkeit 50 endet. Danach die signalisierten oder allgemeinen Regeln beachten.",
+    "simpleTh": "สิ้นสุดเขตความเร็วทั่วไป 50 กม./ชม. หลังจากนั้นต้องขับตามป้ายหรือกฎทั่วไป",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "2.58",
+    "category": "rules",
+    "importance": "high",
+    "image": "assets/road-signs/ch/2.58-freie-fahrt.svg",
+    "de": "Freie Fahrt",
+    "th": "สิ้นสุดข้อจำกัดหลายอย่าง",
+    "simpleDe": "Mehrere zuvor signalisierte Beschränkungen enden.",
+    "simpleTh": "ข้อจำกัดก่อนหน้าหลายอย่างสิ้นสุดลง แต่ยังต้องขับตามกฎทั่วไป",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
     "id": "2.59.1",
     "category": "parking",
     "importance": "high",
@@ -503,6 +558,28 @@ export const roadSigns = [
     "th": "เขตห้ามจอดรถ",
     "simpleDe": "In dieser Zone ist Parkieren zu den angegebenen Zeiten verboten.",
     "simpleTh": "ในเขตนี้ห้ามจอดรถตามเวลาที่ระบุบนป้าย",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "2.59.3",
+    "category": "rules",
+    "importance": "high",
+    "image": "assets/road-signs/ch/2.59.3-fussgaengerzone.svg",
+    "de": "Fussgängerzone",
+    "th": "เขตคนเดินเท้า",
+    "simpleDe": "Bereich für Fussgänger. Fahrzeuge nur, wenn es ausdrücklich erlaubt ist.",
+    "simpleTh": "พื้นที่สำหรับคนเดินเท้า รถเข้าได้เฉพาะเมื่อมีป้ายอนุญาต",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "2.59.5",
+    "category": "rules",
+    "importance": "very_high",
+    "image": "assets/road-signs/ch/2.59.5-begegnungszone.svg",
+    "de": "Begegnungszone",
+    "th": "เขตใช้ทางร่วมกัน",
+    "simpleDe": "Maximal 20 km/h. Fussgänger dürfen die ganze Verkehrsfläche benutzen und haben Vortritt.",
+    "simpleTh": "ความเร็วสูงสุด 20 กม./ชม. คนเดินเท้าใช้พื้นที่ถนนได้และมีสิทธิ์ก่อน",
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
@@ -704,6 +781,17 @@ export const roadSigns = [
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
+    "id": "4.14",
+    "category": "information",
+    "importance": "medium",
+    "image": "assets/road-signs/ch/4.14-spital.svg",
+    "de": "Spital",
+    "th": "โรงพยาบาล",
+    "simpleDe": "Hinweis auf ein Spital. Ruhig und aufmerksam fahren.",
+    "simpleTh": "ใกล้โรงพยาบาล ขับอย่างระมัดระวังและไม่ส่งเสียงรบกวน",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
     "id": "4.17",
     "category": "parking",
     "importance": "medium",
@@ -723,6 +811,28 @@ export const roadSigns = [
     "th": "จอดรถพร้อมแผ่นตั้งเวลา",
     "simpleDe": "Parkscheibe korrekt einstellen.",
     "simpleTh": "ต้องใช้แผ่นตั้งเวลาจอดรถและตั้งเวลาให้ถูกต้อง",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "4.20",
+    "category": "parking",
+    "importance": "high",
+    "image": "assets/road-signs/ch/4.20-parkieren-gegen-gebuehr.svg",
+    "de": "Parkieren gegen Gebühr",
+    "th": "จอดรถแบบเสียค่าธรรมเนียม",
+    "simpleDe": "Parkieren ist gegen Gebühr erlaubt. Zahlungs- und Zeitregeln beachten.",
+    "simpleTh": "จอดรถได้เมื่อชำระค่าจอดและทำตามเงื่อนไขเวลา",
+    "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
+  },
+  {
+    "id": "4.21",
+    "category": "parking",
+    "importance": "medium",
+    "image": "assets/road-signs/ch/4.21-parkhaus.svg",
+    "de": "Parkhaus",
+    "th": "อาคารจอดรถ",
+    "simpleDe": "Hinweis auf ein Parkhaus oder eine gedeckte Parkmöglichkeit.",
+    "simpleTh": "บอกทางหรือจุดจอดรถในอาคาร",
     "source": "Bundesamt für Strassen ASTRA / Schweizer Signalisationsverordnung"
   },
   {
@@ -773,7 +883,7 @@ export const roadSigns = [
     "id": "4.95",
     "category": "information",
     "importance": "medium",
-    "image": "assets/road-signs/ch/4.95-notausgang-0.png",
+    "image": "assets/road-signs/ch/4.95-notausgang-1.png",
     "de": "Notausgang",
     "th": "ทางออกฉุกเฉิน",
     "simpleDe": "Notausgang, besonders in Tunneln wichtig.",
